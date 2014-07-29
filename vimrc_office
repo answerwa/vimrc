@@ -1,0 +1,70 @@
+if has('gui_running')
+	colorscheme kkruby
+endif
+syntax on
+
+set nocp
+set bs=indent,eol,start
+set number
+"set langmenu=en_US
+
+set lines=45
+set columns=120
+
+if has("autocmd")
+	filetype on
+	autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
+	autocmd FileType c setlocal ts=4 
+	autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noet
+endif
+filetype plugin on
+filetype indent on
+
+set smartindent
+set autoindent
+set cindent
+
+"file encoding settings                                                              
+set encoding=utf-8                                                               
+set termencoding=uf-8 "for tty screen
+set fileencodings=usc-bom,utf-8,euc-jp,gb2312,gb18030,gbk,cp936,latin1                   
+set laststatus=2   
+
+"vim的菜单乱码解决：
+"同样在 _vimrc文件里以上的中文设置后加上下列命令，
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+"vim提示信息乱码的解决
+language messages en_US.utf-8
+
+"set guifont=Fixedsys:h9:cGB2312
+"set guifont=NSimsun:h9:cANSI
+"set guifont=Monaco:h9:cANSI
+set guifont=consolas:h12
+"set guifont=console\ Mono\ derivative\ Powerline:h12
+
+
+set ts=4
+set showcmd
+set hlsearch
+set incsearch
+set showmatch
+set showtabline=2
+"high-light the current line
+set cursorline
+set cc=100
+
+map <silent> <F2> :if &guioptions =~# 'T' <Bar>
+        \set guioptions-=T <Bar>
+    \else <Bar>
+        \set guioptions+=T <Bar>
+    \endif<CR> 
+
+nnoremap <silent> <F8> :TlistToggle<CR>
+
+" space seting test
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+" 2014/01/03 UPDATE
+set wildmenu
