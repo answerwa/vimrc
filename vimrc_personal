@@ -1,0 +1,51 @@
+"不使用vi的键盘模式
+set nocompatible
+
+"indent: 如果用了:set indent,:set ai 等自动缩进，想用退格键将字段缩进的删掉，必须设置这个选项。否则不响应。
+"eol:如果插入模式下在行开头，想通过退格键合并两行，需要设置eol。
+"start：要想删除此次插入前的输入，需设置这个。"
+set backspace=indent,eol,start
+
+"自动缩进
+set ai
+
+"配色方案
+colorscheme desert
+
+"背景色light、dark
+set background=dark
+
+" 语法高亮
+syntax on
+
+"显示行号 
+set number 
+
+"Tab键位4个空格 
+set tabstop=4 
+ 
+"自动缩进的值为4个空格 
+set shiftwidth=4 
+
+"高亮搜索
+set hlsearch
+
+"增量式搜索
+set incsearch
+
+"突出显示当前行
+set cursorline
+ 
+"换行后自动缩进 
+set autoindent 
+ 
+"输入花括号换行后自动缩进 
+set smartindent 
+
+"解决乱码
+let &termencoding=&encoding
+set fileencodings=utf-8,gbk
+
+"设置NerdTres
+map <F3> :NERDTreeMirror<CR>
+map <F3> :NERDTreeToggle<CR>
